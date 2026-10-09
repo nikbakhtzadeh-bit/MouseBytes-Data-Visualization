@@ -5,11 +5,12 @@
 This project explores response accuracy in the five-choice serial reaction time task (5-CSRTT), a behavioural task used to study attention-related performance in mice. The analysis compares 5XFAD mice with B6SJLF1/J mice in the 3–6 month age category across selected probe-task schedules.
 ## Story Summary
 
-This project explores whether response accuracy in the five-choice serial reaction time task (5-CSRTT), a behavioural task used to study attention-related performance in mice, differs between 5XFAD mice, a model of Alzheimer’s disease, and B6SJLF1/J mice. Using aggregated behavioural data from the MouseBytes *Weston-Project: Alzheimer’s mouse models dataset*, the analysis focuses on mice in the 3–6-month age category during probe sessions across four experimental schedules.
+Does response accuracy differ between 5XFAD mice, a model of Alzheimer’s disease, and B6SJLF1/J mice across different schedules of the five-choice serial reaction time task (5-CSRTT)?
 
-The visualizations compare average response accuracy between the two groups for each schedule. The scientific visualization presents group means with 95% confidence intervals, allowing readers to examine the observed differences and variability. The public-facing visualization presents the same comparison in a simpler bar-chart format for a broader audience.
+The MouseBytes data reveal a more nuanced pattern than a simple difference between the two groups. Across four probe-task schedules, average response accuracy varies by schedule, while the difference between 5XFAD and B6SJLF1/J mice is not consistent in direction or magnitude. The group comparison therefore depends on the experimental schedule rather than showing one uniform pattern across all conditions.
 
-The empirical story is that response accuracy varies across schedules, and the differences between the two groups are not uniform across all conditions. These descriptive patterns may help identify schedule-specific differences that could be explored in future research. However, the visualizations alone do not establish statistical significance, causation, or a definitive effect of genotype. Because animals may contribute observations across multiple schedules, the independence of observations should also be considered when conducting further statistical analyses.
+Together, the visualizations highlight the importance of considering task conditions when examining attention-related behavioural performance in mouse models of Alzheimer’s disease. The scientific chart displays group means with 95% confidence intervals, while the public-facing chart presents the comparison in a more accessible format. These figures support a descriptive comparison, but they do not establish whether observed differences are statistically significant or caused by genotype. Further statistical analysis would be needed to evaluate the strength and reliability of the patterns.
+
 
 ## Data source
 
