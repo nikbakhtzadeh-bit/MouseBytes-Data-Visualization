@@ -87,12 +87,12 @@ scientific_plot <- ggplot(
     y = "Mean accuracy (%)",  
     color = "Genotype"  
   ) +  
-  scale_color_manual(  
-    values = c(  
-      "5XFAD" = "black",  
-      "B6SJLF1/J" = "grey50"  
-    )  
-  ) +  
+ scale_color_manual(
+  values = c(
+    "5XFAD" = "black",
+    "B6SJLF1/J" = "grey50"
+  )
+) +  
   theme_classic()  
 
 # Black-and-white public-facing visualization  
@@ -115,12 +115,12 @@ public_plot <- ggplot(
     y = "Average accuracy (%)",  
     fill = "Mouse group"  
   ) +  
-  scale_fill_manual(  
-    values = c(  
-      "5XFAD" = "grey75",  
-      "B6SJLF1/J" = "grey35"  
-    )  
-  ) +  
+  scale_fill_manual(
+  values = c(
+    "5XFAD" = "black",
+    "B6SJLF1/J" = "grey60"
+  )
+) +  
   theme_minimal(base_size = 12)  
 
 # Save both figures in the figures folder  
