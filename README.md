@@ -32,7 +32,7 @@ A bar chart designed for a broader audience.
 
 ![Public-facing visualization](figures/probe_accuracy_public.png)
 
-* `figures/probe_accuracy_public.png`: A bar chart designed for a broader audience.
+
 ### Scientific visualization
 
 Group means with 95% confidence intervals.
