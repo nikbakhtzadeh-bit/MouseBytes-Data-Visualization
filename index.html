@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,6 +84,74 @@
     src="figures/probe_accuracy_public.png?v=3"
     alt="Bar chart comparing accuracy between mouse genotypes"
   >
+
+</body>
+</html>
+```
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 20px auto 40px;
+      filter: grayscale(100%);
+    }
+
+    #story-summary {
+      margin-bottom: 35px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>MouseBytes Data Visualization</h1>
+
+  <section id="story-summary">
+    <h2>Story Summary</h2>
+
+    <p>
+      Does response accuracy differ between 5XFAD mice, a model of
+      Alzheimer’s disease, and B6SJLF1/J mice across different schedules
+      of the five-choice serial reaction time task (5-CSRTT)?
+    </p>
+
+    <p>
+      Across four probe-task schedules, average response accuracy varies
+      by schedule, and the difference between 5XFAD and B6SJLF1/J mice
+      is not consistent in direction or magnitude. This suggests that
+      the group comparison depends on the experimental schedule rather
+      than showing one uniform pattern across all conditions.
+    </p>
+
+    <p>
+      The visualizations highlight the importance of considering task
+      conditions when examining attention-related behavioural performance.
+      They provide a descriptive comparison but do not establish
+      statistical significance or causation.
+    </p>
+  </section>
+
+  <h2>Project Overview</h2>
+  <p>
+    This project explores accuracy in the five-choice serial reaction time
+    task (5-CSRTT), comparing 5XFAD mice with B6SJLF1/J mice in the
+    3–6 month age category across selected probe-task schedules.
+    The visualizations are descriptive and do not, by themselves,
+    establish statistically significant genotype effects.
+  </p>
+
+  <h2>Scientific Visualization</h2>
+  <p>Group means with 95% confidence intervals.</p>
+
+  <img src="figures/probe_accuracy_scientific.png?v=3"
+       alt="Scientific plot showing group means and 95% confidence intervals">
+
+  <h2>Public-Facing Visualization</h2>
+  <p>A bar chart designed for a broader audience.</p>
+
+  <img src="figures/probe_accuracy_public.png?v=3"
+       alt="Bar chart comparing accuracy between mouse genotypes">
 
 </body>
 </html>
