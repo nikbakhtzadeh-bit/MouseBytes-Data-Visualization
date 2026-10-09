@@ -1,0 +1,23 @@
+# Exclude detailed trial-by-trial data
+
+mousebytesdataset_version-1/Trial_by_Trial/
+
+# Exclude RStudio project user state
+
+.Rproj.user/
+.Rhistory
+.RData
+
+# Exclude aggregated datasets not used in this analysis
+
+mousebytesdataset_version-1/Aggregated-Data/DP_*.csv
+mousebytesdataset_version-1/Aggregated-Data/FB_AD_PAL_*.csv
+mousebytesdataset_version-1/Aggregated-Data/FB_AD_PD.csv
+
+# Exclude duplicate figures from the source data folder
+
+mousebytesdataset_version-1/Aggregated-Data/probe_accuracy_*.png
+
+# Exclude nested RStudio project file
+
+mousebytesdataset_version-1/Aggregated-Data/Aggregated-Data.Rproj

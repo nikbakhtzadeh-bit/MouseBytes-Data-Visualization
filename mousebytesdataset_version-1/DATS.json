@@ -1,0 +1,451 @@
+{
+  "title": "Alzheimer’s mouse models dataset",
+  "description": "This dataset has data files from 5-Choice, Pairwise Visual Discrimination (PVD), and Paired-Associates Learning (PAL) cognitive behavioral tasks in which male and female mice from 3 Alzheimer’s mouse models were tested using touchscreen technology at two different sites (e.g. University of Western Ontario and University of Guelph). Both aggregated data and trial-by-trial data are provided in this dataset. ",
+  "identifier": {
+    "identifier": "https://elifesciences.org/articles/49630"
+  },
+  "creators": [
+    {
+      "fullName": "Dr. Marco Prado",
+      "firstName": "Marco",
+      "lastName": "Prado",
+      "email": "mprado@robarts.ca",
+      "affiliations": [
+        {
+          "name": "Robarts Research Institute, The University of Western Ontario"
+        }
+      ]
+    },
+    {
+      "fullName": "Dr. Boyer Winters",
+      "firstName": "Boyer",
+      "lastName": "Winters",
+      "affiliations": [
+        {
+          "name": "Department of Psychology and Neuroscience Program, University of Guelph"
+        }
+      ],
+      "email": "bwinters@uoguelph.ca"
+    }
+  ],
+  "types": [
+    {
+      "information": {
+        "value": "Cognitive Behavioral Data"
+      }
+    }
+  ],
+  "version": "1",
+  "privacy": "open",
+  "licenses": [
+    {
+      "name": "CC0"
+    }
+  ],
+  "distributions": [
+    {
+      "formats": [
+        "CSV"
+      ],
+      "size": 100,
+      "unit": {
+        "value": "MB"
+      },
+      "access": {
+        "landingPage": "https://mousebytes.ca/data-extraction",
+        "authorizations": [
+          {
+            "value": "public"
+          }
+        ]
+      }
+    }
+  ],
+  "primaryPublications": [
+    {
+      "title": "MouseBytes, an open-access high-throughput pipeline and database for rodent touchscreen-based cognitive assessment",
+      "publicationVenue": "eLife",
+      "authors": [
+        {
+          "fullName": "Flavio Beraldo",
+          "firstName": "Flavio",
+          "middleInitial": "",
+          "lastName": "Beraldo",
+          "affiliations": [
+            {
+              "name": "Department of Physiology and Pharmacology, The University of Western Ontario"
+            }
+          ]
+        },
+        {
+          "fullName": "Daniel Palmer",
+          "firstName": "Daniel",
+          "middleInitial": "",
+          "lastName": "Palmer",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario"
+            },
+            {
+              "name": "Department of Psychology and Neuroscience Program, University of Guelph"
+            }
+          ]
+        },
+        {
+          "fullName": "Sara Memar",
+          "firstName": "Sara",
+          "middleInitial": "",
+          "lastName": "Memar",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario"
+            }
+          ]
+        },
+        {
+          "fullName": "David Wasserman",
+          "firstName": "David",
+          "middleInitial": "",
+          "lastName": "Wasserman",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario"
+            },
+            {
+              "name": "Department of Psychology and Neuroscience Program, University of Guelph"
+            }
+          ]
+        },
+        {
+          "fullName": "Wai-Jane Lee",
+          "firstName": "Wai-Jane",
+          "middleInitial": "",
+          "lastName": "Lee",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario"
+            }
+          ]
+        },
+        {
+          "fullName": "Shuai Liang",
+          "firstName": "Shuai",
+          "middleInitial": "",
+          "lastName": "Liang",
+          "affiliations": [
+            {
+              "name": "Rotman Research Institute, Baycrest Hospital"
+            }
+          ]
+        },
+        {
+          "fullName": "Samantha Creighton",
+          "firstName": "Samantha",
+          "middleInitial": "",
+          "lastName": "Creighton",
+          "affiliations": [
+            {
+              "name": "Department of Psychology and Neuroscience Program, University of Guelph"
+            }
+          ]
+        },
+        {
+          "fullName": "Benjamin Kolisnyk",
+          "firstName": "Benjamin",
+          "middleInitial": "",
+          "lastName": "Kolisnyk",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario"
+            }
+          ]
+        },
+        {
+          "fullName": "Matthew Cowan",
+          "firstName": "Matthew",
+          "middleInitial": "",
+          "lastName": "Cowan",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario"
+            }
+          ]
+        },
+        {
+          "fullName": "Justin Mels",
+          "firstName": "Justin",
+          "middleInitial": "",
+          "lastName": "Mels",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario, Ontario"
+            }
+          ]
+        },
+        {
+          "fullName": "Talal Masood",
+          "firstName": "Talal",
+          "middleInitial": "",
+          "lastName": "Masood",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario,"
+            }
+          ]
+        },
+        {
+          "fullName": "Chris Fodor",
+          "firstName": "Chris",
+          "middleInitial": "",
+          "lastName": "Fodor",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario"
+            }
+          ]
+        },
+        {
+          "fullName": "Mohammed Al-Onaizi",
+          "firstName": "Mohammed",
+          "middleInitial": "",
+          "lastName": "Al-Onaizi",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario"
+            }
+          ]
+        },
+        {
+          "fullName": "Robert Bartha",
+          "firstName": "Robert",
+          "middleInitial": "",
+          "lastName": "Bartha",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario"
+            }
+          ]
+        },
+        {
+          "fullName": "Tom Gee",
+          "firstName": "Tom",
+          "middleInitial": "",
+          "lastName": "Gee",
+          "affiliations": [
+            {
+              "name": "Rotman Research Institute, Baycrest Hospital"
+            }
+          ]
+        },
+        {
+          "fullName": "Lisa Saksida",
+          "firstName": "Lisa",
+          "middleInitial": "",
+          "lastName": "Saksida",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario"
+            },
+            {
+              "name": "Department of Physiology and Pharmacology, The University of Western Ontario"
+            }
+          ]
+        },
+        {
+          "fullName": "Timothy Bussey",
+          "firstName": "Timothy",
+          "middleInitial": "",
+          "lastName": "Bussey",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario"
+            },
+            {
+              "name": "Department of Physiology and Pharmacology, The University of Western Ontario"
+            }
+          ]
+        },
+        {
+          "fullName": "Stephen Strother",
+          "firstName": "Stephen",
+          "middleInitial": "",
+          "lastName": "Strother",
+          "affiliations": [
+            {
+              "name": "Rotman Research Institute, Baycrest Hospital"
+            },
+            {
+              "name": "Department of Medical Biophysics, University of Toronto"
+            }
+          ]
+        },
+        {
+          "fullName": "Vania Prado",
+          "firstName": "Vania",
+          "middleInitial": "",
+          "lastName": "Prado",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario"
+            },
+            {
+              "name": "Department of Physiology and Pharmacology, The University of Western Ontario"
+            }
+          ]
+        },
+        {
+          "fullName": "Boyer Winters",
+          "firstName": "Boyer",
+          "middleInitial": "",
+          "lastName": "Winters",
+          "affiliations": [
+            {
+              "name": "Department of Psychology and Neuroscience Program, University of Guelph"
+            }
+          ]
+        },
+        {
+          "fullName": "Marco Prado",
+          "firstName": "Marco",
+          "middleInitial": "",
+          "lastName": "Prado",
+          "affiliations": [
+            {
+              "name": "Robarts Research Institute, The University of Western Ontario"
+            },
+            {
+              "name": "Department of Physiology and Pharmacology, The University of Western Ontario"
+            }
+          ]
+        }
+      ],
+      "dates": [
+        {
+          "type": {
+			   "value": "not specified"
+          },
+          "date": "2019-12-11 00:00:00"
+        }
+      ],
+      "identifier": {
+        "identifier": "https://elifesciences.org/articles/49630"
+      }
+    }
+  ],
+  "isAbout": [
+		{
+			"identifier": {
+				"identifier": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=10090",
+				"identifierSource": "NCBI Taxonomy Database"
+			},
+			"name":"Mus musculus"
+		}
+  ],
+  "acknowledges": [
+    {
+      "name": "Grants",
+      "funders": [
+        {
+          "name": "Weston Brain Institute",
+          "abbreviation": ""
+        },
+        {
+          "name": "Canada First Research Excellence Fund",
+          "abbreviation": "CFREF"
+        },
+        {
+          "name": "Canadian Open Neuroscience Platform",
+          "abbreviation": "CONP"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "value": "Alzheimer's Disease"
+    },
+    {
+      "value": "Touchscreen Technology"
+    },
+    {
+      "value": "Cognition"
+    },
+    {
+      "value": "Mouse"
+    }
+  ],
+  "extraProperties": [
+    {
+      "category": "subjects",
+      "values": [
+        {
+          "value": "652"
+        }
+      ]
+    },
+    {
+      "category": "files",
+      "values": [
+        {
+          "value": "16"
+        }
+      ]
+    },
+    {
+      "category": "CONP_status",
+      "values": [
+        {
+          "value": "CONP"
+        }
+      ]
+    },
+    {
+      "category": "origin_institution",
+      "values": [
+        {
+          "value": "The University of Western Ontario"
+        }
+      ]
+    },
+    {
+      "category": "origin_city",
+      "values": [
+        {
+          "value": "London"
+        }
+      ]
+    },
+    {
+      "category": "origin_province",
+      "values": [
+        {
+          "value": "Ontario"
+        }
+      ]
+    },
+    {
+      "category": "origin_country",
+      "values": [
+        {
+          "value": "Canada"
+        }
+      ]
+    },
+    {
+      "category": "logo",
+      "values": [
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "category": "contact",
+      "values": [
+        {
+          "value": "Sara Memar, smemarko@uwo.ca"
+        }
+      ]
+    }
+  ]
+}
