@@ -30,14 +30,13 @@ Group means with 95% confidence intervals.
 
 A bar chart designed for a broader audience.
 
-![Public-facing visualization](figures/probe_accuracy_public.png)
 
 
 ### Scientific visualization
 
 Group means with 95% confidence intervals.
 
-![Scientific visualization](figures/probe_accuracy_scientific.png)
+
 
 ### Public-facing visualization
 
