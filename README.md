@@ -8,7 +8,7 @@ This project explores response accuracy in the five-choice serial reaction time 
 
 The data come from the MouseBytes dataset, *Weston-Project: Alzheimer’s mouse models dataset*.
 
-* Source: https://mousebytes.ca
+* Source: [MouseBytes](https://mousebytes.ca)
 * Dataset DOI: https://doi.org/10.7554/eLife.49630
 * File used: `FB_AD_5Choice.csv`
 * Data type: Aggregated behavioural data
@@ -19,24 +19,11 @@ The analysis selects records from the Probe session for the two genotypes and th
 
 ## Visualizations
 
-* `figures/probe_accuracy_scientific.png`: Group means with 95% c
 ### Scientific visualization
 
 Group means with 95% confidence intervals.
 
 ![Scientific visualization](figures/probe_accuracy_scientific.png)
-
-### Public-facing visualization
-
-A bar chart designed for a broader audience.
-
-
-
-### Scientific visualization
-
-Group means with 95% confidence intervals.
-
-
 
 ### Public-facing visualization
 
