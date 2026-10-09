@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,151 +7,183 @@
   <title>MouseBytes Data Visualization</title>
 
   <style>
+    :root {
+      --black: #111111;
+      --dark-gray: #444444;
+      --medium-gray: #777777;
+      --light-gray: #eeeeee;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       max-width: 1000px;
       margin: 40px auto;
-      padding: 0 20px;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #222;
+      padding: 0 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: var(--black);
+      background: var(--white);
     }
 
-    img {
-      display: block;
-      width: 100%;
-      max-width: 900px;
-      height: auto;
-      margin: 20px auto 40px;
-      filter: grayscale(100%);
+    h1 {
+      color: var(--black);
+      border-bottom: 3px solid var(--black);
+      padding-bottom: 12px;
+    }
+
+    h2 {
+      color: var(--dark-gray);
+      margin-top: 36px;
+    }
+
+    p {
+      color: var(--dark-gray);
     }
 
     #story-summary {
       margin-bottom: 35px;
+      padding: 20px;
+      background: var(--light-gray);
+      border-left: 5px solid var(--black);
+    }
+
+    .figure-description {
+      color: var(--medium-gray);
+      font-size: 0.95rem;
+    }
+
+    .figure-container {
+      margin: 20px 0 45px;
+      padding: 16px;
+      border: 1px solid #cccccc;
+      background: var(--white);
+    }
+
+    .figure-container img {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      margin: 0 auto;
+      filter: grayscale(100%);
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px 0;
+      border-top: 1px solid #cccccc;
+      color: var(--medium-gray);
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: var(--dark-gray);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        margin: 20px auto;
+        padding: 0 14px;
+      }
+
+      #story-summary {
+        padding: 14px;
+      }
+
+      .figure-container {
+        padding: 8px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <h1>MouseBytes Data Visualization</h1>
 
-  <section id="story-summary">
-    <h2>Story Summary</h2>
+  <header>
+    <h1>MouseBytes Data Visualization</h1>
+  </header>
 
+  <main>
+
+    <section id="story-summary">
+      <h2>Story Summary</h2>
+
+      <p>
+        Does response accuracy differ between 5XFAD mice, a model of
+        Alzheimer’s disease, and B6SJLF1/J mice across different schedules
+        of the five-choice serial reaction time task (5-CSRTT)?
+      </p>
+
+      <p>
+        Across four probe-task schedules, average response accuracy varies
+        by schedule, and the difference between 5XFAD and B6SJLF1/J mice
+        is not consistent in direction or magnitude. This suggests that
+        the group comparison depends on the experimental schedule rather
+        than showing one uniform pattern across all conditions.
+      </p>
+
+      <p>
+        The visualizations highlight the importance of considering task
+        conditions when examining attention-related behavioural performance.
+        They provide a descriptive comparison but do not establish
+        statistical significance or causation.
+      </p>
+    </section>
+
+    <section id="project-overview">
+      <h2>Project Overview</h2>
+
+      <p>
+        This project explores accuracy in the five-choice serial reaction
+        time task (5-CSRTT), comparing 5XFAD mice with B6SJLF1/J mice in
+        the 3–6 month age category across selected probe-task schedules.
+        The visualizations are descriptive and do not, by themselves,
+        establish statistically significant genotype effects.
+      </p>
+    </section>
+
+    <section id="scientific-visualization">
+      <h2>Scientific Visualization</h2>
+
+      <p class="figure-description">
+        Group means with 95% confidence intervals.
+      </p>
+
+      <div class="figure-container">
+        <img
+          src="figures/probe_accuracy_scientific.png?v=4"
+          alt="Scientific plot showing group means and 95% confidence intervals"
+        >
+      </div>
+    </section>
+
+    <section id="public-visualization">
+      <h2>Public-Facing Visualization</h2>
+
+      <p class="figure-description">
+        A bar chart designed for a broader audience.
+      </p>
+
+      <div class="figure-container">
+        <img
+          src="figures/probe_accuracy_public.png?v=4"
+          alt="Bar chart comparing accuracy between mouse genotypes"
+        >
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
     <p>
-      Does response accuracy differ between 5XFAD mice, a model of
-      Alzheimer’s disease, and B6SJLF1/J mice across different schedules
-      of the five-choice serial reaction time task (5-CSRTT)?
+      MouseBytes Data Visualization | Descriptive analysis of 5-CSRTT
+      probe-task accuracy.
     </p>
-
-    <p>
-      Across four probe-task schedules, average response accuracy varies
-      by schedule, and the difference between 5XFAD and B6SJLF1/J mice
-      is not consistent in direction or magnitude. This suggests that
-      the group comparison depends on the experimental schedule rather
-      than showing one uniform pattern across all conditions.
-    </p>
-
-    <p>
-      The visualizations highlight the importance of considering task
-      conditions when examining attention-related behavioural performance.
-      They provide a descriptive comparison but do not establish
-      statistical significance or causation.
-    </p>
-  </section>
-
-  <h2>Project Overview</h2>
-
-  <p>
-    This project explores accuracy in the five-choice serial reaction time
-    task (5-CSRTT), comparing 5XFAD mice with B6SJLF1/J mice in the
-    3–6 month age category across selected probe-task schedules.
-    The visualizations are descriptive and do not, by themselves,
-    establish statistically significant genotype effects.
-  </p>
-
-  <h2>Scientific Visualization</h2>
-  <p>Group means with 95% confidence intervals.</p>
-
-  <img
-    src="figures/probe_accuracy_scientific.png?v=3"
-    alt="Scientific plot showing group means and 95% confidence intervals"
-  >
-
-  <h2>Public-Facing Visualization</h2>
-  <p>A bar chart designed for a broader audience.</p>
-
-  <img
-    src="figures/probe_accuracy_public.png?v=3"
-    alt="Bar chart comparing accuracy between mouse genotypes"
-  >
-
-</body>
-</html>
-```
-
-    img {
-      display: block;
-      width: 100%;
-      max-width: 900px;
-      height: auto;
-      margin: 20px auto 40px;
-      filter: grayscale(100%);
-    }
-
-    #story-summary {
-      margin-bottom: 35px;
-    }
-  </style>
-</head>
-
-<body>
-  <h1>MouseBytes Data Visualization</h1>
-
-  <section id="story-summary">
-    <h2>Story Summary</h2>
-
-    <p>
-      Does response accuracy differ between 5XFAD mice, a model of
-      Alzheimer’s disease, and B6SJLF1/J mice across different schedules
-      of the five-choice serial reaction time task (5-CSRTT)?
-    </p>
-
-    <p>
-      Across four probe-task schedules, average response accuracy varies
-      by schedule, and the difference between 5XFAD and B6SJLF1/J mice
-      is not consistent in direction or magnitude. This suggests that
-      the group comparison depends on the experimental schedule rather
-      than showing one uniform pattern across all conditions.
-    </p>
-
-    <p>
-      The visualizations highlight the importance of considering task
-      conditions when examining attention-related behavioural performance.
-      They provide a descriptive comparison but do not establish
-      statistical significance or causation.
-    </p>
-  </section>
-
-  <h2>Project Overview</h2>
-  <p>
-    This project explores accuracy in the five-choice serial reaction time
-    task (5-CSRTT), comparing 5XFAD mice with B6SJLF1/J mice in the
-    3–6 month age category across selected probe-task schedules.
-    The visualizations are descriptive and do not, by themselves,
-    establish statistically significant genotype effects.
-  </p>
-
-  <h2>Scientific Visualization</h2>
-  <p>Group means with 95% confidence intervals.</p>
-
-  <img src="figures/probe_accuracy_scientific.png?v=3"
-       alt="Scientific plot showing group means and 95% confidence intervals">
-
-  <h2>Public-Facing Visualization</h2>
-  <p>A bar chart designed for a broader audience.</p>
-
-  <img src="figures/probe_accuracy_public.png?v=3"
-       alt="Bar chart comparing accuracy between mouse genotypes">
+  </footer>
 
 </body>
 </html>
