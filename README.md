@@ -46,3 +46,10 @@ These figures are descriptive and do not establish statistically significant gen
 ## Reproducibility
 
 The R script `analysis.R` contains the data selection, summary calculations, visualization code, and figure-export commands. The source dataset must be available at the file path expected by the script.
+
+## Additional Visualization: Accuracy Comparison
+
+The following grayscale boxplot compares accuracy between 5XFAD and B6SJLF1/J mice.
+
+![Grayscale boxplot comparing accuracy between 5XFAD and B6SJLF1/J mice](figures/accuracy_comparison.png)
+
