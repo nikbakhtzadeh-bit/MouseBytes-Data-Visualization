@@ -1,5 +1,7 @@
+
 # MouseBytes 5-Choice Data Visualization
 # Compare 5XFAD and B6SJLF1/J mice in the 3–6 month age group
+# Black-and-white scientific and public-facing visualizations
 
 library(ggplot2)
 library(dplyr)
@@ -40,11 +42,17 @@ plot_data <- subset(
     )
 )
 
-# Scientific-style visualization
+# Set a consistent group order
+plot_data$Genotype <- factor(
+  plot_data$Genotype,
+  levels = c("5XFAD", "B6SJLF1/J")
+)
+
+# Calculate group means and 95% confidence intervals
 summary_data <- plot_data %>%
   group_by(Genotype, Schedule_Name) %>%
   summarise(
-    n = n(),
+    n = sum(!is.na(`AVG_Trial.Analysis...Accuracy.`)),
     mean_accuracy = mean(
       `AVG_Trial.Analysis...Accuracy.`,
       na.rm = TRUE
@@ -58,36 +66,62 @@ summary_data <- plot_data %>%
     .groups = "drop"
   )
 
+# Consistent positioning for both groups
+dodge_points <- position_dodge(width = 0.4)
+
+# --------------------------------------------------
+# 1. Scientific visualization: black and white
+# --------------------------------------------------
+
 scientific_plot <- ggplot(
   summary_data,
   aes(
     x = Schedule_Name,
     y = mean_accuracy,
-    color = Genotype
+    group = Genotype,
+    shape = Genotype
   )
 ) +
   geom_point(
-    position = position_dodge(width = 0.35),
-    size = 3
+    position = dodge_points,
+    size = 3.2,
+    color = "black"
   ) +
   geom_errorbar(
     aes(
       ymin = mean_accuracy - ci95,
       ymax = mean_accuracy + ci95
     ),
-    position = position_dodge(width = 0.35),
-    width = 0.15
+    position = dodge_points,
+    width = 0.15,
+    color = "black"
+  ) +
+  scale_shape_manual(
+    values = c(
+      "5XFAD" = 16,
+      "B6SJLF1/J" = 1
+    )
   ) +
   labs(
     title = "Probe accuracy across experimental schedules",
     subtitle = "Age group 3–6 months; mean and 95% confidence intervals",
     x = "Experimental schedule",
     y = "Mean accuracy (%)",
-    color = "Genotype"
+    shape = "Genotype"
   ) +
-  theme_classic()
+  theme_classic(base_size = 12) +
+  theme(
+    axis.text.x = element_text(
+      angle = 25,
+      hjust = 1
+    ),
+    legend.position = "top"
+  )
 
-# Public-facing visualization
+# --------------------------------------------------
+# 2. Public-facing visualization: black and white
+# --------------------------------------------------
+
 public_plot <- ggplot(
   summary_data,
   aes(
@@ -98,7 +132,14 @@ public_plot <- ggplot(
 ) +
   geom_col(
     position = position_dodge(width = 0.8),
-    width = 0.7
+    width = 0.7,
+    color = "black"
+  ) +
+  scale_fill_manual(
+    values = c(
+      "5XFAD" = "white",
+      "B6SJLF1/J" = "black"
+    )
   ) +
   labs(
     title = "How accurately did the mice respond?",
@@ -107,17 +148,26 @@ public_plot <- ggplot(
     y = "Average accuracy (%)",
     fill = "Mouse group"
   ) +
-  scale_fill_brewer(palette = "Set2") +
-  theme_minimal(base_size = 12)
+  theme_classic(base_size = 12) +
+  theme(
+    axis.text.x = element_text(
+      angle = 25,
+      hjust = 1
+    ),
+    legend.position = "top"
+  )
 
-# Save both figures
-# Save both figures in the figures folder
+# --------------------------------------------------
+# 3. Save both figures using the existing filenames
+# --------------------------------------------------
+
 ggsave(
   "C:/Users/nikba/OneDrive/Desktop/Neuroscience_DataViz/figures/probe_accuracy_scientific.png",
   plot = scientific_plot,
   width = 9,
   height = 6,
-  dpi = 300
+  dpi = 300,
+  bg = "white"
 )
 
 ggsave(
@@ -125,7 +175,10 @@ ggsave(
   plot = public_plot,
   width = 9,
   height = 6,
-  dpi = 300
+  dpi = 300,
+  bg = "white"
 )
-# Display the scientific plot
+
+# Display the plots
 print(scientific_plot)
+print(public_plot)
