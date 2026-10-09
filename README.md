@@ -19,8 +19,31 @@ The analysis selects records from the Probe session for the two genotypes and th
 
 ## Visualizations
 
-* `figures/probe_accuracy_scientific.png`: Group means with 95% confidence intervals.
+* `figures/probe_accuracy_scientific.png`: Group means with 95% c
+### Scientific visualization
+
+Group means with 95% confidence intervals.
+
+![Scientific visualization](figures/probe_accuracy_scientific.png)
+
+### Public-facing visualization
+
+A bar chart designed for a broader audience.
+
+![Public-facing visualization](figures/probe_accuracy_public.png)
+
 * `figures/probe_accuracy_public.png`: A bar chart designed for a broader audience.
+### Scientific visualization
+
+Group means with 95% confidence intervals.
+
+![Scientific visualization](figures/probe_accuracy_scientific.png)
+
+### Public-facing visualization
+
+A bar chart designed for a broader audience.
+
+![Public-facing visualization](figures/probe_accuracy_public.png)
 
 ## Limitations
 
