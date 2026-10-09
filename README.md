@@ -3,6 +3,7 @@
 ## Project overview
 
 This project explores response accuracy in the five-choice serial reaction time task (5-CSRTT), a behavioural task used to study attention-related performance in mice. The analysis compares 5XFAD mice with B6SJLF1/J mice in the 3–6 month age category across selected probe-task schedules.
+
 ## Story Summary
 
 Does response accuracy differ between 5XFAD mice, a model of Alzheimer’s disease, and B6SJLF1/J mice across different schedules of the five-choice serial reaction time task (5-CSRTT)?
@@ -10,7 +11,6 @@ Does response accuracy differ between 5XFAD mice, a model of Alzheimer’s disea
 The MouseBytes data reveal a more nuanced pattern than a simple difference between the two groups. Across four probe-task schedules, average response accuracy varies by schedule, while the difference between 5XFAD and B6SJLF1/J mice is not consistent in direction or magnitude. The group comparison therefore depends on the experimental schedule rather than showing one uniform pattern across all conditions.
 
 Together, the visualizations highlight the importance of considering task conditions when examining attention-related behavioural performance in mouse models of Alzheimer’s disease. The scientific chart displays group means with 95% confidence intervals, while the public-facing chart presents the comparison in a more accessible format. These figures support a descriptive comparison, but they do not establish whether observed differences are statistically significant or caused by genotype. Further statistical analysis would be needed to evaluate the strength and reliability of the patterns.
-
 
 ## Data source
 
@@ -27,17 +27,13 @@ The analysis selects records from the Probe session for the two genotypes and th
 
 ## Visualizations
 
-### Scientific visualization
+### Scientific Visualization
 
 Group means with 95% confidence intervals.
 
 ![Scientific visualization](figures/probe_accuracy_scientific.png)
 
-### Public-facing visualization
-
-A bar chart designed for a broader audience.
-
-![Public-facing visualization](figures/probe_accuracy_public.png)
+![Bar chart comparing accuracy between mouse genotypes](figures/probe_accuracy_public.png)
 
 ## Limitations
 
@@ -52,4 +48,3 @@ The R script `analysis.R` contains the data selection, summary calculations, vis
 The following grayscale boxplot compares accuracy between 5XFAD and B6SJLF1/J mice.
 
 ![Grayscale boxplot comparing accuracy between 5XFAD and B6SJLF1/J mice](figures/accuracy_comparison.png)
-
