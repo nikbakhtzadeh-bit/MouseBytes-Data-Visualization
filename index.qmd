@@ -1,0 +1,218 @@
+
+---
+title: "MouseBytes 5-Choice Data Visualization"
+author: "Marjan Nikbakhtzadeh"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    embed-resources: true
+execute:
+  warning: false
+  message: false
+---
+
+## Project Overview 
+
+This project explores response accuracy in the five-choice serial reaction time task (5-CSRTT), a behavioural task used to study attention-related performance in mice. The analysis compares 5XFAD mice with B6SJLF1/J mice in the 3–6 month age category across selected probe-task schedules.
+
+## Story Summary
+
+Does response accuracy differ between 5XFAD mice, a model of Alzheimer’s disease, and B6SJLF1/J mice across different schedules of the five-choice serial reaction time task (5-CSRTT)?
+
+The MouseBytes data reveal a more nuanced pattern than a simple difference between the two groups. Across four probe-task schedules, average response accuracy varies by schedule, while the difference between 5XFAD and B6SJLF1/J mice is not consistent in direction or magnitude. The group comparison therefore depends on the experimental schedule rather than showing one uniform pattern across all conditions.
+
+Together, the visualizations highlight the importance of considering task conditions when examining attention-related behavioural performance in mouse models of Alzheimer’s disease. These figures support descriptive comparisons but do not establish statistical significance or causation.
+
+## Data Source
+
+The data come from the MouseBytes dataset, *Weston-Project: Alzheimer’s mouse models dataset*.
+
+* Source: [MouseBytes](https://mousebytes.ca)
+* Dataset DOI: https://doi.org/10.7554/eLife.49630
+* File used: `FB_AD_5Choice.csv`
+* Data type: Aggregated behavioural data
+
+## Analysis
+
+The analysis selects Probe-session records for 5XFAD and B6SJLF1/J mice in the 3–6 month age category. Accuracy values are averaged at the animal level for each experimental schedule. Group means and 95% confidence intervals are calculated for the scientific visualization.
+
+## Visualizations
+
+```{r}
+#| label: setup
+#| include: false
+
+library(ggplot2)
+library(dplyr)
+
+data_file <- file.path(
+  "mousebytesdataset_version-1",
+  "Aggregated-Data",
+  "FB_AD_5Choice.csv"
+)
+
+if (!file.exists(data_file)) {
+  stop(
+    "Dataset not found. Check that FB_AD_5Choice.csv is inside ",
+    "mousebytesdataset_version-1/Aggregated-Data/"
+  )
+}
+
+mydata <- read.csv(data_file)
+
+probe_data <- subset(
+  mydata,
+  Genotype %in% c("5XFAD", "B6SJLF1/J") &
+    SessionName == "Probe"
+)
+
+probe_accuracy <- aggregate(
+  `AVG_Trial.Analysis...Accuracy.` ~
+    AnimalID + Genotype + Age + Sex + Schedule_Name,
+  data = probe_data,
+  FUN = mean,
+  na.rm = TRUE
+)
+
+probe_accuracy$Age <- trimws(probe_accuracy$Age)
+
+plot_data <- subset(
+  probe_accuracy,
+  Age == "3_6" &
+    Schedule_Name %in% c(
+      "5CSRTT_1500ms_Var1",
+      "5CSRTT_600ms_var1",
+      "5CSRTT_800ms_var1",
+      "5CSRTT_1s_var1"
+    )
+)
+
+plot_data$Genotype <- factor(
+  plot_data$Genotype,
+  levels = c("5XFAD", "B6SJLF1/J")
+)
+
+summary_data <- plot_data %>%
+  group_by(Genotype, Schedule_Name) %>%
+  summarise(
+    n = sum(!is.na(`AVG_Trial.Analysis...Accuracy.`)),
+    mean_accuracy = mean(
+      `AVG_Trial.Analysis...Accuracy.`,
+      na.rm = TRUE
+    ),
+    sd_accuracy = sd(
+      `AVG_Trial.Analysis...Accuracy.`,
+      na.rm = TRUE
+    ),
+    se = sd_accuracy / sqrt(n),
+    ci95 = if (n > 1) {
+      qt(0.975, df = n - 1) * se
+    } else {
+      NA_real_
+    },
+    .groups = "drop"
+  )
+
+summary_data$Genotype <- factor(
+  summary_data$Genotype,
+  levels = c("5XFAD", "B6SJLF1/J")
+)
+
+schedule_labels <- c(
+  "5CSRTT_1500ms_Var1" = "1500 ms",
+  "5CSRTT_600ms_var1" = "600 ms",
+  "5CSRTT_800ms_var1" = "800 ms",
+  "5CSRTT_1s_var1" = "1 s"
+)
+
+group_colors <- c(
+  "5XFAD" = "#0072B2",
+  "B6SJLF1/J" = "#D55E00"
+)
+```
+
+### Scientific visualization
+
+Group means with 95% confidence intervals.
+
+```{r}
+#| label: scientific-plot
+#| fig-width: 9
+#| fig-height: 6
+#| fig-cap: "Mean probe-task accuracy by genotype and schedule, with 95% confidence intervals."
+
+ggplot(
+  summary_data,
+  aes(
+    x = Schedule_Name,
+    y = mean_accuracy,
+    color = Genotype,
+    group = Genotype
+  )
+) +
+  geom_point(
+    position = position_dodge(width = 0.35),
+    size = 3
+  ) +
+  geom_errorbar(
+    aes(
+      ymin = mean_accuracy - ci95,
+      ymax = mean_accuracy + ci95
+    ),
+    position = position_dodge(width = 0.35),
+    width = 0.15
+  ) +
+  scale_color_manual(values = group_colors) +
+  scale_x_discrete(labels = schedule_labels) +
+  labs(
+    title = "Probe accuracy across experimental schedules",
+    subtitle = "Mice aged 3–6 months; mean and 95% confidence intervals",
+    x = "Experimental schedule",
+    y = "Mean accuracy (%)",
+    color = "Genotype"
+  ) +
+  theme_classic(base_size = 12)
+```
+
+### Public-facing visualization
+
+A bar chart designed for a broader audience.
+
+```{r}
+#| label: public-plot
+#| fig-width: 9
+#| fig-height: 6
+#| fig-cap: "Average probe-task accuracy for 5XFAD and B6SJLF1/J mice across four schedules."
+
+ggplot(
+  summary_data,
+  aes(
+    x = Schedule_Name,
+    y = mean_accuracy,
+    fill = Genotype
+  )
+) +
+  geom_col(
+    position = position_dodge(width = 0.8),
+    width = 0.7
+  ) +
+  scale_fill_manual(values = group_colors) +
+  scale_x_discrete(labels = schedule_labels) +
+  labs(
+    title = "How accurately did the mice respond?",
+    subtitle = "Probe-task comparison in the 3–6 month age group",
+    x = "Task condition",
+    y = "Average accuracy (%)",
+    fill = "Mouse group"
+  ) +
+  theme_classic(base_size = 12)
+```
+
+## Limitations
+
+These figures are descriptive and do not establish statistically significant genotype differences or causal effects. Animals may contribute observations to multiple schedules. The suitability of the comparison strain and the interpretation of individual schedules should be verified against the dataset documentation before drawing biological conclusions.
+
+## Reproducibility
+
+The analysis is embedded in this Quarto document. The source dataset must be present at the expected relative path, and the R packages `ggplot2` and `dplyr` must be installed.
